@@ -6,4 +6,4 @@ Console.WriteLine("Enter your a name for your Tamagotchi:\n");
 
     string Tama = Console.ReadLine();
 
-    Console.WriteLine(Tama +
+Console.WriteLine(Tama + " Huh? Interesting name! Alright let us proceed with the details");
