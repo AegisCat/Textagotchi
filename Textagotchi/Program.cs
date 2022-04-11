@@ -1,9 +1,22 @@
-﻿Console.WriteLine("Welcome to a Text-Based Tamagotchi Clone ");
-Console.WriteLine("By Connor Hayward\n");
+﻿
 
-Console.WriteLine("Enter your a name for your Tamagotchi:\n");
+namespace Textagotchi
+{
+    class Program
+    {
+
+        public static void Main(string[] args)
+
+        {
+            string textagotchi;
+            string location;
+            textagotchi = Console.ReadLine();
+            Console.WriteLine(textagotchi + ". What an interesting and special name that is totally unique. \n");
+            Console.WriteLine("Anyways, where does your Pikachu live?");
+            location = Console.ReadLine();
 
 
-    string Tama = Console.ReadLine();
-
-Console.WriteLine(Tama + " Huh? Interesting name! Alright let us proceed with the details");
+            
+        }
+    }
+}
