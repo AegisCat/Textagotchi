@@ -1,6 +1,4 @@
-﻿
-
-namespace Textagotchi
+﻿namespace Textagotchi
 {
     class Program
     {
@@ -11,10 +9,11 @@ namespace Textagotchi
             string tama;
             string location;
             int level = 1;
-            float experience = 0;
+            int experience = 0;
             int milliseconds = 5000;
             bool entry = false;
-            string[] help = {"help", "info", "coingame"};
+            string[] help = {"help", "info", "coingame", "exptable"};
+            string[] exptable = { "Level 2 = 10", "Level 3 = 30", "Level 4 = 60", "Level 5 = 100", "Level 6 = 200", "Level 7 = 500", "Level 8 = 1000", "Level 9 = 2000" };
             bool helpentry = false;
 
             Console.WriteLine("Enter your Pet's Name.");
@@ -29,8 +28,10 @@ namespace Textagotchi
             Console.Clear();
             entry = true;
 
+
             while (entry == true)
             {
+
                 if (experience >= 10 && experience <= 29)
                 {
                     level = 2;
@@ -87,7 +88,6 @@ namespace Textagotchi
 
                 }
 
-
                 if (helpentry == false)
                 {
                     helpentry = true;
@@ -114,6 +114,7 @@ namespace Textagotchi
                     Console.WriteLine("Location: " + location);
                     Console.WriteLine("Level: " + level);
                     Console.WriteLine("Experience: " + experience);
+                    Console.WriteLine("Current Time: " + DateTime.Now.ToString());
                 }
 
                 if (input == "among us")
@@ -165,6 +166,12 @@ namespace Textagotchi
 
                     }
 
+
+                }
+
+                if (input == "exptable")
+                {
+                    Array.ForEach(exptable, Console.WriteLine);
 
                 }
             }
