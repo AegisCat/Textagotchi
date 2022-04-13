@@ -82,10 +82,13 @@
                 if (input == "coingame")
 
                 {
+                    Console.Clear();
                     int numPlays = 0, numWins = 0;
                     int compChoice = 0;
                     char userChoice;
                     double percentWin;
+                    int gambletimer = 2000;
+                    int endgambletimer = 5000;
                     Random rnd = new();
                     while (true)
                     {
@@ -96,6 +99,8 @@
                         {
                             if (char.ToLowerInvariant(userChoice) == 'h' && compChoice == 0)
                             {
+                                Console.WriteLine("\n...");
+                                Thread.Sleep(gambletimer);
                                 Console.WriteLine("\nYOU WON");
                                 Console.WriteLine("\nYOU EARNED $2");
                                 money = money + 2;
@@ -103,6 +108,8 @@
                             }
                             else if (char.ToLowerInvariant(userChoice) == 't' && compChoice == 1)
                             {
+                                Console.WriteLine("\n...");
+                                Thread.Sleep(gambletimer);
                                 Console.WriteLine("\nYOU WON");
                                 Console.WriteLine("\nYOU EARNED $2");
                                 money = money + 2;
@@ -110,6 +117,8 @@
                             }
                             else
                             {
+                                Console.WriteLine("\n...");
+                                Thread.Sleep(gambletimer);
                                 Console.WriteLine("\nYOU LOSE");
                             }
                             numPlays++;
@@ -119,6 +128,8 @@
                             percentWin = (double)numWins / numPlays;
                             Console.WriteLine("\nYou won {0} out of {1} game(s) or {2:P} of the games played.", numWins, numPlays, percentWin);
                             Console.WriteLine("Won a Total of $" + money);
+                            Thread.Sleep(endgambletimer);
+                            Console.Clear();
                             break;
                         }
 
