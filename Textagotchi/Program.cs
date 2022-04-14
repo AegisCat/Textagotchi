@@ -98,7 +98,7 @@
                     Random rand = new Random();
 
                     // Call one:
-                    functions[rand.Next(0, 3)](); // Random number either 0 or 1
+                    functions[rand.Next(0, 3)](); // Random number (min, max)
                 }
                 if (input == "edit")
                 {
@@ -108,7 +108,7 @@
                     location = Console.ReadLine();
                 }
 
-                if ((input == "among us") || (input == "amongus") || (input == "sus"))
+                if ((input == "among us") || (input == "amongus") || (input == "sus") || (input == "amogus") || (input == "imposter") || (input == "sussy"))
                 {
                     Console.WriteLine("You're Not Funny.");
                 }
