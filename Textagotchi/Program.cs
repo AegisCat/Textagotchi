@@ -2,6 +2,24 @@
 {
     class Program
     {
+        static void TestEvent1()
+        {
+            Console.Beep();
+            Console.WriteLine("Beeped");
+        }
+
+        static void TestEvent2()
+        {
+            Console.WriteLine("Test1");
+        }
+
+        static void TestEvent3()
+        {
+            Console.WriteLine("Test2");
+        }
+
+        // Create the function delegate:
+        private delegate void RandomFunction();
 
         public static void Main(string[] args)
             
@@ -66,6 +84,22 @@
                     Console.WriteLine("Current Time: " + DateTime.Now.ToString());
                 }
 
+                if (input == "randomtest")
+                {
+                    // Create a list of these delegates:
+                    List<RandomFunction> functions = new List<RandomFunction>();
+
+                    // Add the functions to the list:
+                    functions.Add(TestEvent1);
+                    functions.Add(TestEvent2);
+                    functions.Add(TestEvent3);
+
+                    // Make our randomizer:
+                    Random rand = new Random();
+
+                    // Call one:
+                    functions[rand.Next(0, 3)](); // Random number either 0 or 1
+                }
                 if (input == "edit")
                 {
                     Console.WriteLine("Please enter a new name for your Tamagotchi");
