@@ -98,28 +98,48 @@ namespace Textagotchi
                         Console.WriteLine(item);
                     }
                 }
-                if (input == "randomtest")
-                {
-                    // Create a list of these delegates:
-                    List<RandomFunction> functions = new List<RandomFunction>();
-
-                    // Add the functions to the list:
-                    functions.Add(TestEvent1);
-                    functions.Add(TestEvent2);
-                    functions.Add(TestEvent3);
-
-                    // Make our randomizer:
-                    Random rand = new Random();
-
-                    // Call one:
-                    functions[rand.Next(0, 3)](); // Random number (min, max)
-                }
                 if (input == "edit")
                 {
                     Console.WriteLine("Please enter a new name for your Tamagotchi");
                     tama = Console.ReadLine();
                     Console.WriteLine("Please enter a new location for your Tamagotchi");
                     location = Console.ReadLine();
+                }
+
+                if (input == "shop")
+                {
+                    while (true)
+                    {
+                        Console.WriteLine("We have the following items.\n");
+                        Console.WriteLine("[1] Canned Food - $30");
+
+                        Console.WriteLine("\nLeave blank to exit.");
+
+                        input = Console.ReadLine();
+
+                        if (input == "1")
+                        {
+                            if (money >= 30)
+                            {
+                                Console.WriteLine("Added Canned Food");
+                                Inventory.Add("Canned Food");
+                                money-= 30;
+                            }
+
+                            if (money <= 30)
+                            {
+                                Console.WriteLine("Not Enough Money.");
+
+                            }
+
+                        }
+
+
+                        if (input == "")
+                        {
+                            break;
+                        }
+                    }
                 }
 
                 if ((input == "among us") || (input == "amongus") || (input == "sus") || (input == "amogus") || (input == "imposter") || (input == "sussy"))
@@ -187,10 +207,32 @@ namespace Textagotchi
                 }
 
                 // Debug Commands
-                if(input == "add dummy")
+                if (input == "randomtest")
+                {
+                    // Create a list of these delegates:
+                    List<RandomFunction> functions = new List<RandomFunction>();
+
+                    // Add the functions to the list:
+                    functions.Add(TestEvent1);
+                    functions.Add(TestEvent2);
+                    functions.Add(TestEvent3);
+
+                    // Make our randomizer:
+                    Random rand = new Random();
+
+                    // Call one:
+                    functions[rand.Next(0, 3)](); // Random number (min, max)
+                }
+
+                if (input == "add dummy")
                 {
                     Console.WriteLine("Added Dummy Item to Inventory.");
                     Inventory.Add("dummyDEBUG");
+                }
+
+                if (input == "MONEYCHEATER")
+                {
+                    money = 9999999;
                 }
             }
 
