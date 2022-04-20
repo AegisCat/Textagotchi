@@ -1,7 +1,11 @@
-﻿namespace Textagotchi
+﻿using System.Collections.Generic;
+
+namespace Textagotchi
 {
-    class Program
+    public static class Program
     {
+        static List<string> Inventory = new List<string>();
+
         static void TestEvent1()
         {
             Console.Beep();
@@ -31,6 +35,7 @@
             bool entry = false;
             string[] help = {"help", "info", "coingame", "edit"};
             bool helpentry = false;
+
 
             Console.WriteLine("Enter your Pet's Name.");
             tama = Console.ReadLine();
@@ -84,6 +89,13 @@
                     Console.WriteLine("Current Time: " + DateTime.Now.ToString());
                 }
 
+                if (input == "inventory")
+                {
+                    foreach (string item in Inventory)
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
                 if (input == "randomtest")
                 {
                     // Create a list of these delegates:
@@ -170,6 +182,12 @@
                     }
 
 
+                }
+
+                // Debug Commands
+                if(input == "add dummy")
+                {
+                    Inventory.Add("dummy");
                 }
             }
 
