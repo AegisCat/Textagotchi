@@ -91,6 +91,8 @@ namespace Textagotchi
 
                 if (input == "inventory")
                 {
+                    Console.WriteLine("You currently have the following items:\n");
+
                     foreach (string item in Inventory)
                     {
                         Console.WriteLine(item);
@@ -187,7 +189,8 @@ namespace Textagotchi
                 // Debug Commands
                 if(input == "add dummy")
                 {
-                    Inventory.Add("dummy");
+                    Console.WriteLine("Added Dummy Item to Inventory.");
+                    Inventory.Add("dummyDEBUG");
                 }
             }
 
