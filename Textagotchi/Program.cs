@@ -33,7 +33,7 @@ namespace Textagotchi
             int money = 0;
             int milliseconds = 5000;
             bool entry = false;
-            string[] help = {"help", "info", "coingame", "edit"};
+            string[] help = {"help", "info", "coingame", "edit", "inventory", "shop"};
             bool helpentry = false;
 
 
