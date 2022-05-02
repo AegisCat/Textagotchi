@@ -31,7 +31,7 @@
             int money = 0;
             int milliseconds = 5000;
             bool entry = false;
-            string[] help = { "help", "info", "coingame", "edit", "inventory", "shop" };
+            string[] help = { "help", "info", "coingame", "wordle", "edit", "inventory", "shop" };
             bool helpentry = false;
             List<string> Words = new List<string>();
 
@@ -379,6 +379,8 @@
 
                 if (input == "wordle")
                 {
+                    Console.Clear();
+                    int wordletimer = 5000;
                     string? answer = "no";
 
                     //Random Word Picker
@@ -498,6 +500,8 @@
                             }
                             Console.ForegroundColor = ConsoleColor.White;
                             Console.WriteLine("The Word Was: " + theWord);
+                            Console.WriteLine("You Won $100");
+                            money = money + 100;
                         }
 
                         //No
@@ -512,7 +516,7 @@
 
                             //Guessing
 
-                            for (int i = 0; i < 9; i++)
+                            for (int i = 0; i < 60; i++)
                             {
                                 Console.ForegroundColor = ConsoleColor.White;
 
@@ -701,6 +705,9 @@
                                 {
                                     Console.ForegroundColor = ConsoleColor.Blue;
                                     Console.WriteLine("You did it!");
+                                    Console.WriteLine("You Won $100");
+                                    money = money + 100;
+
                                     i = 999;
                                 }
 
@@ -710,7 +717,9 @@
                         }
 
                         //Wait Before Closing
+                        Console.WriteLine("Press Any Key to Continue:");
                         Console.ReadKey();
+                        Console.Clear();
                         break;
                     }  
                 }
